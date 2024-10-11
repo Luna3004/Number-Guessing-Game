@@ -16,31 +16,31 @@ print(number)
 
 guess = int(input("What number do you guess? "))
 
-i = 1
-while i < 10:
+n = 1
+while n < 10:
     if guess != number:
         if guess >= upper_bound : 
             if guess < lower_bound or guess > upper_bound:
                 print("That is outside the range you assigned. Again!")
-                i = i + 1
+                n = n + 1
                 guess = int(input("What number do you guess? "))
             else:
                 print("Please try again. Your guess is too high!")
                 guess = int(input("What number do you guess? "))
-                i = i + 1
+                n = n + 1
         elif guess <= number: 
             if guess < lower_bound or guess > upper_bound:
                 print("That is outside the range you assigned. Again!")
-                i = i + 1
+                n = n + 1
                 guess = int(input("What number do you guess? "))
             else:
                 print("Please try again! Your guess is too low!")
                 guess = int(input("What number do you guess? "))
-                i = i + 1
+                n = n + 1
     else: 
         print("Congratulations! You got it right")
-        print(f"Number of Guesses: {i}")
+        print(f"Number of Guesses: {n}")
         break
 else: 
   print(f"Better Lucky Next Time!The number was {number}")
-  print(f"Number of Guesses: {i}")
+  print(f"Number of Guesses: {n}")

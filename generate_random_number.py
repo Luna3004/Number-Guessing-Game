@@ -1,4 +1,4 @@
 import random 
 
-def generate_random_number(a, b):
-  return random.randint(a, b)
+def generate_random_number(c, d):
+  return random.randint(c, d)
