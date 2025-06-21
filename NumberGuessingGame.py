@@ -1,11 +1,11 @@
 import os
-import generate_random_number
+from generate_random_number import generate_random_number
 
 import random
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
-print("Welcome to the Number Guessing Game! You will be able to assign a lower/upper bound into the random generator machine. The machine will pick a number and you will have to guess it in under 10 trys. Good luck!")
+print("Welcome to the Number Guessing Game! You will be able to assign a lower/upper bound into the random generator machine. The machine will pick a number and you will have to guess it in under 10 tries. Good luck!")
 print("-----------------------------------------------------------------")
 
 lower_bound = int(input("What is the lower bound of the range? "))
@@ -19,21 +19,15 @@ guess = int(input("What number do you guess? "))
 n = 1
 while n < 10:
     if guess != number:
-        if guess >= upper_bound : 
-            if guess < lower_bound or guess > upper_bound:
-                print("That is outside the range you assigned. Again!")
-                n = n + 1
-                guess = int(input("What number do you guess? "))
-            else:
+        if guess < lower_bound or guess > upper_bound:
+            print("That is outside the range you assigned. Again!")
+            guess = int(input("What number do you guess? "))
+            n = n + 1
+        elif guess >= number :
                 print("Please try again. Your guess is too high!")
                 guess = int(input("What number do you guess? "))
                 n = n + 1
         elif guess <= number: 
-            if guess < lower_bound or guess > upper_bound:
-                print("That is outside the range you assigned. Again!")
-                n = n + 1
-                guess = int(input("What number do you guess? "))
-            else:
                 print("Please try again! Your guess is too low!")
                 guess = int(input("What number do you guess? "))
                 n = n + 1
